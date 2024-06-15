@@ -4,7 +4,6 @@ from rest_framework.routers import DefaultRouter
 from api.views import WordViewSet
 
 
-
 router_v1 = DefaultRouter()
 router_v1.register("words", WordViewSet)
 
