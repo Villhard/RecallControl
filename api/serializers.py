@@ -6,4 +6,4 @@ from words.models import Word
 class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
-        fields = ("word", "definition", "example")
+        fields = ("id", "word", "definition", "example")
