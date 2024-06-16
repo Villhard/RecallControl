@@ -5,6 +5,6 @@ from api.views import WordViewSet
 
 
 router_v1 = DefaultRouter()
-router_v1.register("words", WordViewSet)
+router_v1.register("words", WordViewSet, basename="word")
 
 urlpatterns = [path("v1/", include(router_v1.urls))]
