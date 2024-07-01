@@ -22,12 +22,14 @@ class WordViewSet(viewsets.ModelViewSet):
 class StudyView(views.APIView):
     permission_classes = [IsOwner]
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         words = Word.objects.filter(owner=request.user)
         word = choice(words)
         return Response(StudySerializer(word).data)
 
-    def post(self, request):
+    @staticmethod
+    def post(request):
         word = Word.objects.get(id=request.data["id"])
         result = "correct" if word.word == request.data["word"] else "incorrect"
         return Response({"result": result})
